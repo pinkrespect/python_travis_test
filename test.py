@@ -11,12 +11,7 @@ def calculate(array):
             for j, k in enumerate(divisor):
                 dividend[i+j] = XOR(k, dividend[i+j])
 
-    codeword = list(array)
-
-    for i in range(len(divisor) - 1):
-        codeword.append(dividend[i + len(array)])
-
-    return codeword
+    return list(array) + dividend[len(array):]
 
 
 one = [1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
