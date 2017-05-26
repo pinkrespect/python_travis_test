@@ -1,5 +1,3 @@
-
-
 def calculate(input):
     DIVISOR = [1, 1, 0, 1, 0, 1]
     dividend = input + [0] * (len(DIVISOR) - 1)
@@ -8,7 +6,7 @@ def calculate(input):
         if dividend[i] == 0:
             continue
         for j, k in enumerate(DIVISOR):
-            dividend[i+j] = 1 if k != dividend[i+j] else 0
+            dividend[i+j] = k ^ dividend[i+j]
 
     return input + dividend[len(input):]
 
