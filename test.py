@@ -1,7 +1,3 @@
-def XOR(number1, number2):
-    return 0 if number1 is number2 else 1
-
-
 def calculate(array):
     divisor = [1, 1, 0, 1, 0, 1]
     dividend = array + [0] * (len(divisor) - 1)
@@ -9,9 +5,9 @@ def calculate(array):
     for i in range(len(array)):
         if dividend[i] == 1:
             for j, k in enumerate(divisor):
-                dividend[i+j] = XOR(k, dividend[i+j])
+                dividend[i+j] = 0 if k == dividend[i+j] else 1
 
-    return list(array) + dividend[len(array):]
+    return array + dividend[len(array):]
 
 
 one = [1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
