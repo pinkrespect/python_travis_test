@@ -6,12 +6,10 @@ class Encoder:
     
     @staticmethod
     def XOR(number1, number2):
-        if number1 is number2:
-            return 0
-        return 1
+        return 0 if number1 is number2 else 1
 
     def calculate(self, array):
-        codeword = [0 for x in range(len(self.dividend))]
+        codeword = [0] * len(self.dividend)
         for i in range(len(self.dividend)-len(self.divisor)):
             if self.dividend[i] is 1:
                 for j in range(len(self.divisor)):
@@ -30,3 +28,4 @@ class Encoder:
 encoder = Encoder([1, 0, 1, 0, 0, 0, 1, 1, 0, 1])
 CODEWORD = encoder.calculate([1, 0, 1, 0, 0, 0, 1, 1, 0, 1])
 print("Codeword: ", CODEWORD)
+
