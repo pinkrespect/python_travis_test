@@ -1,16 +1,18 @@
-def calculate(array):
-    divisor = [1, 1, 0, 1, 0, 1]
-    dividend = array + [0] * (len(divisor) - 1)
 
-    for i in range(len(array)):
+
+def calculate(input):
+    DIVISOR = [1, 1, 0, 1, 0, 1]
+    dividend = input + [0] * (len(DIVISOR) - 1)
+
+    for i in range(len(input)):
         if dividend[i] == 0:
             continue
-        for j, k in enumerate(divisor):
+        for j, k in enumerate(DIVISOR):
             dividend[i+j] = 1 if k != dividend[i+j] else 0
 
-    return array + dividend[len(array):]
+    return input + dividend[len(input):]
 
 
-one = [1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
-CODEWORD = calculate(one)
+ONE = [1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+CODEWORD = calculate(ONE)
 print("Codeword: ", CODEWORD)
