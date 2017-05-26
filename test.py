@@ -11,8 +11,8 @@ class Encoder:
     def calculate(self):
         dividend = list(self.dividend)
         codeword = [0] * len(self.array)
-        
-        for i in range(len(dividend)-len(self.divisor)):
+
+        for i in range(len(self.array)):
             if dividend[i] is 1:
                 for j in range(len(self.divisor)):
                     dividend[i+j] = Encoder.XOR(self.divisor[j], dividend[i+j])
