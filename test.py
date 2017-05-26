@@ -5,7 +5,6 @@ def XOR(number1, number2):
 def calculate(array):
     divisor = [1, 1, 0, 1, 0, 1]
     dividend = array + [0] * (len(divisor) - 1)
-    codeword = [0] * len(array)
 
     for i in range(len(array)):
         if dividend[i] == 1:
