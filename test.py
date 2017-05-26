@@ -10,8 +10,8 @@ class Encoder:
 
     def calculate(self):
         dividend = list(self.dividend)
-        codeword = [0] * len(dividend)
-
+        codeword = [0] * len(self.array)
+        
         for i in range(len(dividend)-len(self.divisor)):
             if dividend[i] is 1:
                 for j in range(len(self.divisor)):
@@ -23,6 +23,7 @@ class Encoder:
         for i in range(len(self.divisor) - 1):
             codeword.append(dividend[i + len(self.array)])
 
+        print(len(codeword))
         return codeword
 
 
