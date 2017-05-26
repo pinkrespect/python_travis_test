@@ -6,7 +6,7 @@ def calculate(array):
         if dividend[i] == 0:
             continue
         for j, k in enumerate(divisor):
-            dividend[i+j] = 0 if k == dividend[i+j] else 1
+            dividend[i+j] = 1 if k != dividend[i+j] else 0
 
     return array + dividend[len(array):]
 
