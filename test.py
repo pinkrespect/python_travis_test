@@ -3,9 +3,10 @@ def calculate(array):
     dividend = array + [0] * (len(divisor) - 1)
 
     for i in range(len(array)):
-        if dividend[i] == 1:
-            for j, k in enumerate(divisor):
-                dividend[i+j] = 0 if k == dividend[i+j] else 1
+        if dividend[i] == 0:
+            continue
+        for j, k in enumerate(divisor):
+            dividend[i+j] = 0 if k == dividend[i+j] else 1
 
     return array + dividend[len(array):]
 
